@@ -1,4 +1,17 @@
-"""Main module for the project."""
+"""ConfigMaster: Advanced Python Configuration Management System
+
+This module serves as the main entry point for the ConfigMaster system, providing
+a robust interface for configuration management, templating, and internationalization.
+
+The system is designed to handle complex configuration scenarios with features like:
+- Type validation
+- Internationalization
+- Template management
+- Async operations
+- MCP server integration
+
+For detailed usage instructions and examples, see the project README.md.
+"""
 
 import argparse
 import asyncio

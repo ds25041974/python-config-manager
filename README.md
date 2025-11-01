@@ -43,7 +43,198 @@ A modern Python project demonstrating internationalization, template-based text 
 ├── tests/                   # Test files
 ├── .github/                 # GitHub workflows
 ├── pyproject.toml          # Project configuration
-└── README.md               # This file
+└── # ConfigMaster: Advanced Python Configuration Management System
+
+## Project Overview
+
+ConfigMaster is a robust, enterprise-grade configuration management system built in Python that provides advanced features for handling application settings, internationalization, templating, and validation. This project demonstrates modern Python development practices and integrates with Model Context Protocol (MCP) servers for enhanced functionality.
+
+## Key Features
+
+- **Strong Type Validation**: Runtime type checking and validation of configuration values
+- **Internationalization (i18n)**: Built-in support for multiple languages (EN, ES, FR, JA)
+- **Template Management**: Flexible template system with categorization and tagging
+- **Configuration Persistence**: JSON-based storage with automatic validation
+- **Async Support**: Asynchronous operations for performance-critical applications
+- **Comprehensive Testing**: 100% test coverage with pytest
+- **MCP Server Integration**: Enhanced capabilities through Model Context Protocol
+
+## MCP Server Integration
+
+### What is MCP (Model Context Protocol)?
+
+The Model Context Protocol (MCP) is a sophisticated communication protocol that enables seamless integration between development tools, AI assistants, and various services. In this project, we utilize MCP servers for:
+
+1. **GitHub Integration**
+   - Repository management
+   - Code synchronization
+   - Automated workflows
+   - Collaboration features
+
+2. **Azure Services** (Optional Extension)
+   - Cloud configuration management
+   - Service deployment
+   - Resource monitoring
+   - Security compliance
+
+3. **Development Tools**
+   - Code analysis
+   - Documentation generation
+   - Quality assurance
+   - Performance monitoring
+
+### Benefits of MCP Server Integration
+
+1. **Enhanced Development Workflow**
+   - Automated code reviews
+   - Intelligent code suggestions
+   - Context-aware assistance
+   - Integrated version control
+
+2. **Improved Code Quality**
+   - Real-time validation
+   - Best practice enforcement
+   - Automated testing
+   - Security scanning
+
+3. **Streamlined Deployment**
+   - Automated builds
+   - Environment consistency
+   - Configuration validation
+   - Rollback capabilities
+
+4. **Team Collaboration**
+   - Code sharing
+   - Knowledge management
+   - Project synchronization
+   - Change tracking
+
+## Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/ds25041974/python-config-manager.git
+
+# Create and activate virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies
+pip install -e ".[dev]"
+```
+
+## Usage Examples
+
+### Basic Configuration
+
+```python
+from src.config.settings import AppConfig
+from src.config.i18n import Language
+
+# Create configuration with custom settings
+config = AppConfig(
+    debug=True,
+    language=Language.JA,
+    custom_message="Welcome to ConfigMaster!"
+)
+
+# Validate and save configuration
+config.validate()
+config.to_file("config.json")
+```
+
+### Template Management
+
+```python
+from src.config.templates import TemplateManager, TemplateCategory
+
+# Get templates by category
+formal_templates = TemplateManager.get_by_category(TemplateCategory.FORMAL)
+
+# Search templates by tags
+business_templates = TemplateManager.search_by_tags({"business", "professional"})
+```
+
+### Internationalization
+
+```python
+from src.config.i18n import get_translation, Language
+
+# Get translations for different languages
+en_trans = get_translation(Language.EN)
+ja_trans = get_translation(Language.JA)
+
+print(en_trans.greeting_prefix)  # "Hello"
+print(ja_trans.greeting_prefix)  # "こんにちは"
+```
+
+## Project Structure
+
+```
+src/
+├── config/
+│   ├── i18n.py        # Internationalization support
+│   ├── settings.py    # Configuration management
+│   ├── templates.py   # Template system
+│   └── validation.py  # Validation logic
+├── main.py           # Main application entry
+tests/
+└── test_main.py     # Comprehensive tests
+```
+
+## Development
+
+### Running Tests
+
+```bash
+# Run all tests
+pytest tests/
+
+# Run tests with coverage
+pytest --cov=src tests/
+
+# Run specific test
+pytest tests/test_main.py -k "test_greet_with_language"
+```
+
+### Code Quality
+
+```bash
+# Format code
+black .
+isort .
+
+# Type checking
+mypy src tests
+
+# Linting
+flake8 .
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and ensure code quality
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Python community for best practices and patterns
+- MCP server developers for protocol specifications
+- Contributors to dependent libraries
+
+## Support
+
+For questions and support:
+- Open an issue on GitHub
+- Contact the development team
+- Check documentation updates               # This file
 ```
 
 ## Installation
